@@ -6,5 +6,7 @@ FROM python:3-onbuild
 # Add a default port containers from this image should expose
 EXPOSE 5000
 
+ENV TAG="default"
+
 # Add a default command for this image
-CMD ["python","app.py"] 
+CMD ["python","app.py"]
