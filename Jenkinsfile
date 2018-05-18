@@ -7,7 +7,7 @@ pipeline {
           sayHello('Alain')
           println("Commit : ${getCommit()}")
           println("BRANCH_NAME : ${BRANCH_NAME}")
-          println("GIT_TAG_NAME : ${gitTagName()}")
+          println("GIT_TAG_NAME : ${gitTagName( getCommit() )}")
         }
       }
     }
