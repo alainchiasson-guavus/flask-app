@@ -5,7 +5,9 @@ pipeline {
       steps {
         script {
           sayHello('Alain')
-          println getCommit()
+          println("Commit : ${getCommit()}")
+          println("BRANCH_NAME : ${BRANCH_NAME}")
+          println("GIT_TAG_NAME : ${gitTagName()}")
         }
       }
     }
