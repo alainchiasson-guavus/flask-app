@@ -11,7 +11,7 @@ pipeline {
     stage('Call Groovy code'){
       steps {
         script {
-          com.guavus.jenkins.gitUtil.guavusCopyright();
+          com.guavus.jenkins.guavusCopyright();
         }
       }
     }
