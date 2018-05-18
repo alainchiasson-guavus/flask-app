@@ -12,7 +12,7 @@ pipeline {
     stage('Call Groovy code'){
       steps {
         script {
-          println com.guavus.jenkins.GitUtil.guavusCopyright()
+          println "not doing anything"
         }
       }
     }
