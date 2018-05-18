@@ -5,6 +5,7 @@ pipeline {
       steps {
         script {
           sayHello('Alain')
+          println getCommit()
         }
       }
     }
