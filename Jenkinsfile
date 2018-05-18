@@ -1,3 +1,5 @@
+def gitUtils = new com.guavus.jenkins.GitUtils()
+
 pipeline {
   agent any
   stages {
@@ -11,7 +13,7 @@ pipeline {
     stage('Call Groovy code'){
       steps {
         script {
-          com.guavus.jenkins.guavusCopyright();
+          gitUtils.guavusCopyright();
         }
       }
     }
