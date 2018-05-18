@@ -1,7 +1,7 @@
 pipeline {
 
   def gitUtil = new com.guavus.jenkins.GitUtil()
-  
+
   agent any
   stages {
     stage('Print var from lib') {
