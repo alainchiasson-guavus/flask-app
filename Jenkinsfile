@@ -1,7 +1,4 @@
 pipeline {
-
-  def gitUtil = new com.guavus.jenkins.GitUtil()
-
   agent any
   stages {
     stage('Print var from lib') {
@@ -14,7 +11,7 @@ pipeline {
     stage('Call Groovy code'){
       steps {
         script {
-          gitUtil.guavusCopyright();
+          com.guavus.jenkins.GitUtil.guavusCopyright();
         }
       }
     }
