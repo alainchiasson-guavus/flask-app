@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return '%s : Hello! I am a Flask application.' % tag + get_raw_headers(request)
+    return '%s : Hello! I am a Flask application.</br>' % tag + get_raw_headers(request)
 
 
 @app.route('/request')
@@ -18,17 +18,18 @@ def print_request():
 
 @app.route('/env')
 def print_env():
-    return '%s : %s' % (tag, socket.gethostbyname(socket.gethostname())) + get_raw_headers(request)
+    return '%s : %s</br>' % (tag, socket.gethostbyname(socket.gethostname())) + get_raw_headers(request)
 
 @app.route('/<path:full_path>')
 def print_path(full_path):
     ip = socket.gethostbyname(socket.gethostname())
-    return '%s : Hello! I am a Flask application on %s. Request path: %s' % (tag, ip, full_path) + get_raw_headers(request)
+    return '%s : Hello! I am a Flask application on %s </br>. Request path: %s' % (tag, ip, full_path) + get_raw_headers(request)
 
 def get_raw_headers(request):
     headerlist = ""
-    for key, value in request.headers.iteritems():
-        headerlist = headerlist + "\n%s: %s" % (key, value)
+    headers = request.headers
+    for key, value in headers :
+        headerlist = headerlist + "</br>%s: %s" % (key, value)
     return headerlist
 
 
